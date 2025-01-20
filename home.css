@@ -222,6 +222,10 @@ footer {
     right: 30px;
 }
 
+.footer-links a {
+    display: inline-flex;
+}
+
 .footer-links img {
     margin-right: 7px;
     width: 30px;
