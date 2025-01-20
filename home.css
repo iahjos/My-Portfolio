@@ -1,0 +1,229 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', monospace;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+
+header {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh; /* Ensure full viewport height */
+    padding: 2rem;
+    flex-direction: column; /* Stack items vertically on small screens */
+}
+
+.header-container {
+    display: flex;
+    flex-direction: row; /* Align items horizontally */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Allow elements to wrap on smaller screens */
+}
+
+.welcome-text {
+    flex: 1;
+    text-align: left;
+    padding: 1rem;
+    margin-right: 2rem; /* Space between text and photo */
+}
+
+.welcome-text h1 {
+    font-size: 3rem; /* Adjust heading size */
+    margin-bottom: 1rem;
+}
+
+.welcome-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.profile-photo {
+    flex: 0 0 250px; /* Ensure photo container stays fixed size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem; /* Ensure there's space between text and image */
+}
+
+.profile-photo img {
+    width: 100%;
+    max-width: 300px; /* Ensure image doesn't get too large */
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Apply the fade-in effect */
+.welcome-text, .profile-photo img {
+    opacity: 0; /* Start as invisible */
+    animation: fadeIn 1.5s ease-out forwards; /* Duration: 1.5s, easing: ease-out */
+}
+
+.welcome-text {
+    animation-delay: 0.5s; /* Delay the welcome text animation */
+}
+
+/* Apply gradient to text */
+.welcome-text h1 {
+    background: linear-gradient(45deg, #40E0D0, #ff6a00, #ee0979); /* Gradient colors */
+    background-size: 300% 300%;
+    -webkit-background-clip: text; /* Use the background clip to apply the gradient to text */
+    -moz-background-clip: text; /* For Firefox */
+    background-clip: text; /* Standard property */
+    color: transparent; /* Make text color transparent so that only gradient shows */
+    animation: gradientAnimation 5s ease infinite; /* Apply the gradient animation */
+}
+
+.profile-photo img {
+    animation-delay: 1s; /* Delay the profile photo animation */
+}
+
+/* Main */
+
+main {
+    padding: 4rem 2rem;
+    background-color: #f5f5f5;
+    height: 90vh;
+    flex: 1;
+}
+
+main section h2 {
+    text-align: center;
+    font-size: 60px;
+    font-weight: 500;
+    color: black;
+}
+
+main section p{
+    text-align: center;
+    font-size: 30px;
+}
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.project-card {
+    position: relative;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 400px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.project-card img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    text-align: center;
+    font-size: 40px;
+    margin: 1rem 0 0.5rem;
+}
+
+.project-card p {
+    font-size: 20px;
+    margin: 0 1rem 1.5rem;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* Styling for the project link (logo) */
+
+.project-logo {
+    margin-top: 50px;
+}
+
+.project-logo img{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    padding: 2rem;
+    background-color: black;
+    height: 5vh;
+    position: relative;
+    background: linear-gradient(45deg, #6a1b9a, #00bcd4, #ff5722);
+    background-size: 400% 400%;
+    animation: gradientAnimation 20s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.footer-info p {
+    color: white;
+    margin: 0;
+    font-size: 16px;
+}
+
+.footer-links {
+    position: absolute; /* To position the LinkedIn logo at the bottom-right corner */
+    bottom: 30px;
+    right: 30px;
+}
+
+.footer-links img {
+    width: 30px;
+    height: 30px;
+}
