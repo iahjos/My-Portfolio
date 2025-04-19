@@ -231,3 +231,42 @@ footer {
     width: 30px;
     height: 30px;
 }
+
+@media screen and (max-width: 500px) {
+    footer {
+      flex-direction: row;
+      flex-wrap: wrap;
+      height: auto;
+      padding: 1rem;
+      justify-content: space-between;
+      align-items: center;
+      height: 8vh;
+    }
+  
+    .footer-inner {
+      flex: 1;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+  
+    .footer-info p {
+      font-size: 12px;
+    }
+  
+    .footer-links {
+      position: static;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 0.5rem;
+    }
+  
+    .footer-links img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+  
+  
